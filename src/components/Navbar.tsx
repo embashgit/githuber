@@ -30,7 +30,7 @@ export default () => {
     return push(pathname)
   }
   return (
-    <Disclosure as="nav" className="bg-white">
+    <Disclosure as="nav" className="bg-grey-900">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -47,9 +47,9 @@ export default () => {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex-1 mt-2 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <p className='text-2xl'>Flexiana</p>
+                  <p className=' brand-logo text-2xl'></p>
                   <div className='hidden lg:block h8 w-auto '></div>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
@@ -60,9 +60,9 @@ export default () => {
                         onClick={() => handleChangePage(item.href)}
                         className={classNames(
                           item.current
-                            ? 'bg-gray-900 text-white'
+                            ? 'bg-white text-grey-900'
                             : 'text-gray-400 hover:bg-gray-700 hover:text-white',
-                          'px-4 py-3 rounded-md text-sm font-medium transition ease-in-out'
+                          'px-3 py-2 rounded-md text-lg font-medium transition ease-in-out'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
