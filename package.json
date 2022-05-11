@@ -1,0 +1,25 @@
+{
+  "name": "githuber",
+  "version": "1.0.0",
+  "description": "Githuber is a React Application used for accessing user information in a github repository ",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/embashgit/githuber.git"
+  },
+  "keywords": [
+    "Repository",
+    "users",
+    "actors",
+    "titles"
+  ],
+  "author": "Ibrahim Bashir (https://github.com/embashgit)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/embashgit/githuber/issues"
+  },
+  "homepage": "https://github.com/embashgit/githuber#readme"
+}
