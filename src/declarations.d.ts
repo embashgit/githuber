@@ -7,3 +7,6 @@ declare module 'uuid'
 /** Dependencies * */
 declare module 'react-router-dom'
 declare module 'react-router'
+declare module 'react-redux'
+declare module 'react-dom'
+declare module '@heroicons/react/outline'
