@@ -11,14 +11,14 @@ const LandingPage = () => {
       <div className="hero-content">
         <div className="text-center flex flex-col justify-center">
           <h1 className="mb-5 text-center text-5xl font-bold lg:text-5xl">Hello To Github User Fetcher!</h1>
-          <div className='w-1/2'>
-          <p className="mb-5 text-red-900 text-center text-2xl  ">
+          <div >
+          <p className="mb-5 text-grey-900 text-center text-2xl  ">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
           </div>
-          <button className="btn btn-primary">Get Started</button>
+          <button className="btn btn-primary text-4xl">Get Started</button>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ import { Inav } from '../interfaces/components.interfaces'
 export default () => {
   const navigation = [
     { name: 'Home', href: '/', current: true },
-    { name: 'Countries', href: '/countries', current: false },
+    { name: 'Find your Repo.', href: '/countries', current: false },
   ]
 
   const [navState, setNavState] = useState(navigation)
