@@ -93,7 +93,7 @@ module.exports = {
       contextRegExp: /moment$/,
     }),
     new HTMLWebpackPlugin({
-      favicon: "https://flexiana.com/app/themes/flexianacom/dist/assets/favicon/favicon-32x32.png",
+      favicon: "./assets/favicon-32x32.png",
       template: path.resolve(__dirname, "..", "./src/index.html"),
       title: "Flexiana Code Challenge",
     }),
@@ -107,13 +107,13 @@ module.exports = {
     }),
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
-        messages: ["Your application is running on http://localhost:4002"],
+        messages: ["Your application is running on http://localhost:5002"],
       },
     }),
   ],
   devServer: {
     historyApiFallback: true,
     compress:true,
-    port:4002
+    port:5002
   },
 };
