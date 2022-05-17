@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 import { StoreState } from '../../interfaces/store.interfaces'
-import CountriesReducer from './countries.reducer'
+import RepoReducer from './repositories.reducer'
 
 import UserReducer from './user.reducer'
 
 const rootReducer = combineReducers<StoreState>({
-  Countries: CountriesReducer,
+  Repositories: RepoReducer,
   User: UserReducer,
 })
 

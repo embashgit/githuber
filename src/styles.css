@@ -17,3 +17,80 @@
 .inactive-theme{
   color:#c29a3d;
 }
+
+.bg-image{
+  background-image: url("https://wallpapercave.com/wp/wp3082259.png") ;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size: cover;
+  /* ba */
+}
+@layer utilities {
+  .spinner-load {
+    box-sizing: border-box;
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 50%;
+  
+    & svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      fill: none;
+      stroke: #f0f0f0;
+      stroke-width: 10;
+      stroke-linecap: round;
+      overflow: visible;
+      animation: rotate 1.1s linear 0s infinite;
+      & path {
+        stroke: #c29a3d;
+      }
+      & circle {
+        fill: none;
+      }
+    }
+  }
+  
+  @-webkit-keyframes spinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .spinner {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+  }
+  .spinner::after {
+    content: '';
+    position: absolute !important;
+    top: calc(50% - (1em / 2));
+    left: calc(50% - (1em / 2));
+    display: block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid currentColor;
+    border-radius: 9999px;
+    border-right-color: transparent;
+    border-top-color: transparent;
+  }
+  }

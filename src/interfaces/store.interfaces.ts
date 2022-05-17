@@ -1,10 +1,10 @@
 import { ReactChild, ReactElement, ReactNode } from 'react'
-import { CountriesState, CountryAction } from './countries.interfaces'
+import { RepositoriesState, RepositoriesAction } from './repositories.interfaces'
 import { UserAction, UserState } from './user.interface'
 
 export interface StoreState {
   User: UserState
-  Countries: CountriesState
+  Repositories: RepositoriesState
 }
 type LazyComponentType = React.LazyExoticComponent<React.ComponentType<any>>
 export type DynamicImportType = () => Promise<{
@@ -16,4 +16,4 @@ export interface IRoutes {
   name: string
 }
 
-export type Action = CountryAction | UserAction
+export type Action = RepositoriesAction | UserAction

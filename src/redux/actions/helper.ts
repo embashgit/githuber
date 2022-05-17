@@ -1,39 +1,42 @@
-import { string } from 'prop-types'
-import { fetchAllCountries } from '../../API/country.services'
 import {
-  DispatchCountriesType,
-  ICountries,
-} from '../../interfaces/countries.interfaces'
+  searchGHRepositories,
+  getCollaborators,
+} from '../../API/repositories.services';
+import { DispatchRepositoryType } from '../../interfaces/repositories.interfaces';
 import {
-  getAllCountries,
+  getAllRepositories,
   handleError,
   loadingRequest,
-} from './constants/Countries.action'
+  getCollaboratorsAction,
+  handleCollaboratorsError,
+  loadingCollaborators,
+} from './constants/Repositories.action';
 
-export const fetchCountries = () => async (dispatch: DispatchCountriesType) => {
+export const fetchRepositories = (query = '', page = 1, per_page = 100) => async (dispatch: DispatchRepositoryType) => {
   try {
-    dispatch(loadingRequest())
-    const { data } = await fetchAllCountries()
-    const getCurrrency = (currency: any) =>
-      currency ? Object.values(currency).map((item: any) => item.name) : ''
-    const flatData: ICountries[] = data.map((country: any) =>
-      data.length
-        ? {
-            name: country?.name?.official,
-            flag: country?.flags?.svg,
-            capital: country?.capital?.toString(),
-            code: country?.cca3,
-            currency: getCurrrency(country?.currencies)[0],
-            timezones: country?.timezones[0],
-            continents: country?.continents.toString(),
-            population: country?.population,
-          }
-        : []
-    )
-    dispatch(getAllCountries(flatData))
+    dispatch(loadingRequest());
+    const { data } = await searchGHRepositories(query, page, per_page);
+
+    dispatch(getAllRepositories(data.items));
   } catch (error) {
     dispatch(
-      handleError({ Errormessage: 'Failed to retrieve data', isError: true })
-    )
+      handleError({ Errormessage: 'Failed to retrieve data', isError: true }),
+    );
   }
-}
+};
+
+export const fetchCollaborators = (url: string) => async (dispatch: DispatchRepositoryType) => {
+  dispatch(loadingCollaborators());
+  try {
+    const { data } = await getCollaborators(url);
+    console.log(data);
+    dispatch(getCollaboratorsAction(data));
+  } catch (error) {
+    dispatch(
+      handleCollaboratorsError({
+        CollaboratorsErrorsMessage: 'Failed to retrieve collaborators data',
+        collaboratorsError: true,
+      }),
+    );
+  }
+};

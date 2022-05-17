@@ -1,11 +1,12 @@
 import React from 'react'
 import { ISearchInput } from '../interfaces/components.interfaces'
+import Button from './Button'
 
-const SearchInput: React.FC<ISearchInput> = ({ value, setValue }) => (
-  <div className="relative mr-3 md:w-1/3 w-1/2">
+const SearchInput: React.FC<ISearchInput> = ({ value, setValue, handleSearch }) => (
+  <form onSubmit={(event: React.FormEvent<HTMLFormElement>)=>{event.preventDefault(); handleSearch()}} className="flex items-center justify-items-start relative  md:w-1/3 w-1/2">
     <div className="absolute flex items-center ml-2 h-full">
       <svg
-        className="w-4 h-4 fill-current text-primary-gray-dark"
+        className="w-5 h-5 fill-current text-primary-gray-dark"
         viewBox="0 0 16 16"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -17,10 +18,11 @@ const SearchInput: React.FC<ISearchInput> = ({ value, setValue }) => (
       type="text"
       value={value}
       onChange={(e) => setValue(e.target.value)}
-      placeholder="Search Country"
-      className="px-8 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-gray-900 text-base"
+      placeholder="Search repositories"
+      className="px-8 py-3 w-full rounded-md transition focus:rounded-none mr-3 focus:text-3xl focus:outline-none bg-gray-100 border-transparent focus:border-b-2 focus:border-b-gray-900 focus:bg-white focus:ring-gray-900 text-base"
     />
-  </div>
+      <Button handleClick={handleSearch}>Search</Button>
+  </form>
 )
 
 export default SearchInput

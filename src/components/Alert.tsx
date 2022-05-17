@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { IAlert } from '../interfaces/components.interfaces'
-import { handleError } from '../redux/actions/constants/Countries.action'
+import { handleError } from '../redux/actions/constants/Repositories.action'
 
 const Alert: React.FC<IAlert> = ({ Errormessage }) => {
   const dispatch = useDispatch()

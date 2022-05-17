@@ -1,4 +1,6 @@
+import { string } from 'prop-types';
 import React from 'react'
+import { IRepositoryOwner } from './repositories.interfaces';
 
 export interface Inav {
   name: string
@@ -20,6 +22,7 @@ export interface IfilterComponent {
 export interface ISearchInput {
   value: string
   setValue: (value: string) => void
+  handleSearch: (value?: string) => void
 }
 
 export interface Ibutton {
@@ -43,4 +46,18 @@ export interface IPagination {
 export interface IAlert {
   Errormessage: string
   isError?: boolean
+}
+
+export interface ICollaboratorsAlert {
+  collaboratorsError?: boolean
+  CollaboratorsErrorsMessage: string
+}
+
+export interface IModal {
+  repositoryName: string
+  isOpen: boolean
+  repositoryFullName: string
+  collaborators: IRepositoryOwner[]
+  loadingCollaborators: boolean
+  onClose: () => void
 }
