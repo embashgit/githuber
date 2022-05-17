@@ -2,49 +2,43 @@ import React from 'react'
 
 function TableHeader() {
   return (
-    <thead className="bg-white border-b">
+    <thead className="bg-grey-50 border-b-2 border-grey-200">
       <tr>
         <th
-          scope="col"
-          className="text-base font-medium text-gray-900 px-6 py-4 text-left"
+    
+          className="text-base font-medium text-gray-900 tracking-wide px-6 py-4 text-left"
         >
           Name
         </th>
         <th
-          scope="col"
-          className="text-base font-medium text-gray-900 px-6 py-4 text-left"
+     
+          className="text-base font-medium text-gray-900 tracking-wide px-6 py-4 text-left"
         >
-          Flag
+          Full Name
         </th>
         <th
-          scope="col"
-          className="text-base font-medium text-gray-900 px-6 py-4 text-left"
+
+          className="text-base font-medium text-gray-900 tracking-wide px-6 py-4 text-left"
         >
-          Capital
+          Owner
         </th>
         <th
-          scope="col"
-          className="text-base font-medium text-gray-900 px-6 py-4 text-left"
+
+          className="text-base font-medium text-gray-900 tracking-wide px-6 py-4 text-left"
         >
-          Code
+          Created At
         </th>
         <th
-          scope="col"
-          className="text-base font-medium text-gray-900 px-6 py-4 text-left"
+      
+          className="text-base font-medium text-gray-900 tracking-wide px-6 py-4 text-left"
         >
-          Continient
+          Language
         </th>
         <th
-          scope="col"
-          className="text-base font-medium text-gray-900 px-6 py-4 text-left"
+
+          className="text-base font-medium text-gray-900 tracking-wide px-6 py-4 text-left"
         >
-          Currency
-        </th>
-        <th
-          scope="col"
-          className="text-base font-medium text-gray-900 px-6 py-4 text-left"
-        >
-          Timezone
+          Action
         </th>
       </tr>
     </thead>
