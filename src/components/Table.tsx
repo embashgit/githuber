@@ -8,7 +8,7 @@ import TableRow from './TableRow';
 import Pagination from './Pagination';
 import Modal from './Modal';
 import Gitlogo from '../../assets/vector-cats.png';
-import ActionLoader from './ActionLoader';
+import { SkeletonCard } from './SkeletonCard';
 const Table = () => {
   const {
     repositories,
@@ -72,7 +72,7 @@ const Table = () => {
         </tbody>}
       </table>
       {!loadRequest && currentRepositories.length === 0 && <RenderEmptyRow/>}  
-      {loadRequest && <ActionLoader/>}
+      {loadRequest && <SkeletonCard/>}
       {} 
       </div>
       <Pagination

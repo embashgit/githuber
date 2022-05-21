@@ -2,11 +2,13 @@ import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { IModal } from '../interfaces/components.interfaces';
 import Button from './Button';
+import { SkeletonCard } from './SkeletonCard';
 
 const Modal: React.FC<IModal> = ({
   repositoryName, isOpen, onClose,
   repositoryFullName, collaborators, loadingCollaborators
-}) => (
+}) => {
+  return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10 overflow-auto min-w-content" onClose={onClose}>
@@ -43,18 +45,7 @@ const Modal: React.FC<IModal> = ({
                     {/* <hr className='my-3' /> */}
                   </Dialog.Title>
                   <div className='mt-2 overflow-auto' />
-                  {loadingCollaborators && (
-                    <>
-                      <div className="py-2 flex flex-row">
-                        <div className="rounded-full bg-slate-700 h-10 w-10"></div>
-                        <div className="h-2 bg-slate-700 rounded"></div>
-                      </div>
-                      <div className="py-2 flex flex-row">
-                        <div className="rounded-full bg-slate-700 h-10 w-10"></div>
-                        <div className="h-2 bg-slate-700 rounded"></div>
-                      </div>
-                    </>
-                  )}
+                  {loadingCollaborators &&  <SkeletonCard />}
                   {!loadingCollaborators && collaborators.map((collaborator) => (
                     <div key={collaborator.login} className="py-2 flex flex-row border-y border-gray-100 shadow rounded hover:bg-gray-300 my-3 p-2">
                       <img
@@ -80,6 +71,7 @@ const Modal: React.FC<IModal> = ({
         </Dialog>
       </Transition>
     </>
-);
+)
+};
 
 export default Modal;

@@ -18,13 +18,6 @@
   color:#c29a3d;
 }
 
-.bg-image{
-  background-image: url("https://wallpapercave.com/wp/wp3082259.png") ;
-  background-repeat: no-repeat;
-  background-color: #fff;
-  background-size: cover;
-  /* ba */
-}
 @layer utilities {
   .spinner-load {
     box-sizing: border-box;
