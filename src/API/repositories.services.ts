@@ -13,9 +13,10 @@ export const searchGHRepositories = async (
   `${BASE_URL}/search/repositories?q=${query}&page=${page}&per_page=${per_page}`,
 );
 
+
 // eslint-disable-next-line no-return-await
 export const getCollaborators = async (url: string) => await axios.get(url.replace(/{\/collaborator}/, ''), {
   headers: {
-    authorization: `Basic ${btoa('embashgit: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')}`,
+    authorization: `Basic ${btoa(`embashgit:${process.env.API_KEY}`)}`,
   },
 });
