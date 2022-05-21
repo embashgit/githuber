@@ -26,6 +26,7 @@ const RepositoriesReducer = (
         ...state,
         repositories: action.payload,
         loadRequest: false,
+        isError: false,
       };
     case Constants.FETCHING_REPOSITORIES:
       return {
