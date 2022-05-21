@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://api.github.com';
-
+const BASE_URL ='https://api.github.com';
 export const searchGHRepositories = async (
   query = '',
   page = 1,
