@@ -1,8 +1,6 @@
 # Githuber
  is a Web app. built with REACT as an SPA for fetching user/Contributors in a git repository.
-A Web Application that shows a report of customer feedbacks showing all list of customers and their individual feedbacks
 ## Summary
-​
   - [Getting Started](#getting-started)
   - [Runing the tests](#running-the-tests-[qa])
   - [Deployment](#deployment-[devops])
@@ -17,7 +15,12 @@ A Web Application that shows a report of customer feedbacks showing all list of 
 - install the dependencies using `npm install`
 - start the development server using `npm run dev`
 - visit `http://localhost:5002` on your browser and you will be presented with the Main page
-### Screen Record(s)
+### Screen shots or Record(s)
+
+<img width="1728" alt="Screenshot 2022-05-21 at 04 09 55" src="https://user-images.githubusercontent.com/29065413/169630428-a6890055-aecb-4e8f-a2f0-134016b3b1fb.png">
+
+
+https://user-images.githubusercontent.com/29065413/169630394-90d221a9-2b0b-4c86-a7ff-0572891cdb8b.mov
 
 ### Dependencies
 - Node v12.19.0
@@ -63,60 +66,53 @@ A `Dockerfile` is also provided for container creation.
 ├── package.json
 ├── postcss.config.js
 ├── src
-│   ├── App.tsx
-│   ├── assets
-│   │   └── Solvemate-Favicon.png
-│   ├── components
-│   │   ├── ActionButton.tsx
-│   │   ├── ConponentLoader.tsx
-│   │   ├── Form.tsx
-│   │   ├── Highligted.tsx
-│   │   ├── InfoComponent.tsx
-│   │   ├── List.tsx
-│   │   ├── Navtitle.tsx
-│   │   ├── PageLoader.tsx
-│   │   ├── SearchInput.tsx
-│   │   └── TopNav.tsx
-│   ├── declarations.d.ts
-│   ├── helpers
-│   │   ├── Constants.ts
-│   │   ├── customer
-│   │   │   └── customer.helper.ts
-│   │   ├── feedback
-│   │   │   └── feedback.helpers.ts
-│   │   ├── hooks.ts
-│   │   └── index.ts
-│   ├── index.html
+|   |
+|   ├── API
+│   └── repositories.services.ts
+|   ├── App.tsx
+├── components
+│   ├── Alert.tsx
+│   ├── Button.tsx
+│   ├── FilterComponent.tsx
+│   ├── Modal.tsx
+│   ├── Navbar.tsx
+│   ├── PageLoader.tsx
+│   ├── Pagination.tsx
+│   ├── SearchInput.tsx
+│   ├── SkeletonCard.tsx
+│   ├── Table.tsx
+│   ├── TableHeader.tsx
+│   └── TableRow.tsx
+├── declarations.d.ts
+├── index.html
+├── index.tsx
+├── interfaces
+│   ├── components.interfaces.ts
+│   ├── repositories.interfaces.ts
+│   ├── store.interfaces.ts
+│   └── user.interface.ts
+├── redux
+│   ├── actions
+│   │   ├── constants
+│   │   │   ├── Repositories.action.ts
+│   │   │   └── User.action.ts
+│   │   └── helper.ts
+│   ├── index.ts
+│   └── reducer
+│       ├── index.ts
+│       ├── repositories.reducer.ts
+│       └── user.reducer.ts
+├── routes
 │   ├── index.tsx
-│   ├── interfaces
-│   │   ├── button.interface.ts
-│   │   ├── customer.interface.ts
-│   │   ├── feedback.interface.ts
-│   │   ├── form.interface.ts
-│   │   ├── nav.interface.ts
-│   │   └── store.interface.ts
-│   ├── redux
-│   │   ├── actions
-│   │   │   ├── customer
-│   │   │   │   ├── customer.actionCreator.ts
-│   │   │   │   └── customer.actionTypes.ts
-│   │   │   └── feedbacks
-│   │   │       ├── feedbacks.actionCreator.ts
-│   │   │       ├── feedbacks.actionTypes.ts
-│   │   │       └── index.ts
-│   │   ├── reducer
-│   │   │   ├── customer.reducer.ts
-│   │   │   ├── feedbacks.reducer.ts
-│   │   │   └── index.ts
-│   │   └── store
-│   │       └── index.ts
-│   ├── styles.css
-│   └── views
-│       ├── Customer.tsx
-│       ├── CustomerFeeds.tsx
-│       ├── CustomerList.tsx
-│       ├── FeedbackDashboard.tsx
-│       └── FeedbackLists.tsx
+│   └── routes.ts
+├── styles.css
+└── views
+|   ├── landingPage
+|   │   └── LandingPage.tsx
+|   ├── layouts
+|   │   └── MainLayout.tsx
+|   └── repositories
+|       └── Repositories.tsx
 ├── tailwind.config.js
 ├── tsconfig.json
 ├── webpack
