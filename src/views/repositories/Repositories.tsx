@@ -3,18 +3,22 @@ import { RefreshIcon } from '@heroicons/react/outline';
 import { useDispatch } from 'react-redux';
 import Button from '../../components/Button';
 import SearchInput from '../../components/SearchInput';
+import { IfilterList } from '../../interfaces/components.interfaces';
 import Table from '../../components/Table';
 import { fetchRepositories } from '../../redux/actions/helper';
 
 const Repositories = () => {
+  const filterList: IfilterList[] = [
+    { label: 'name', value: 'name' },
+    { label: 'alpha', value: 'alphacode' },
+  ];
   const dispatch = useDispatch();
   const [,setSelected] = useState<string>('');
   const [value, setValue] = useState<string>('');
+
   const handleSearch = () => {
-    if(value){
-      const encodedStr = encodeURIComponent(value);
-      dispatch(fetchRepositories(encodedStr));
-    }
+    const encodedStr = encodeURIComponent(value);
+    dispatch(fetchRepositories(encodedStr));
   };
 
   const handleClear = () => {

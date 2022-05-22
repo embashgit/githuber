@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { StoreState } from '../interfaces/store.interfaces';
 import { IRepositories } from '../interfaces/repositories.interfaces';
-import { fetchCollaborators, searchCollaborators } from '../redux/actions/helper';
+import { fetchCollaborators } from '../redux/actions/helper';
 import TableHeader from './TableHeader';
 import TableRow from './TableRow';
 import Pagination from './Pagination';
@@ -35,6 +35,7 @@ const Table = () => {
     setModalOpen(false);
     setRepoName('');
     setRepoFullName('');
+    setValue('') //to clear search in the modal
   };
 
   const openModal = (repo: IRepositories) => {
@@ -61,6 +62,8 @@ const Table = () => {
         repositoryName={repoName}
         isOpen={modalOpen}
         onClose={closeModal}
+        setValue={setValue}
+        value={value}
         repositoryFullName={repoFullName}
         collaborators={collaborators}
       />

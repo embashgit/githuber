@@ -21,9 +21,6 @@ export interface IfilterComponent {
 
 export interface ISearchInput {
   value: string
-  showButton?:Boolean;
-  className?: string;
-  placeholder?:string
   setValue: (value: string) => void
   handleSearch: (value?: string) => void
 }
@@ -59,6 +56,8 @@ export interface ICollaboratorsAlert {
 export interface IModal {
   repositoryName: string
   isOpen: boolean
+  setValue: (value: string) => void
+  value:string
   repositoryFullName: string
   collaborators: IRepositoryOwner[]
   loadingCollaborators: boolean
