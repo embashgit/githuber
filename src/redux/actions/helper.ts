@@ -1,8 +1,9 @@
+import { query } from 'express';
 import {
   searchGHRepositories,
   getCollaborators,
 } from '../../API/repositories.services';
-import { DispatchRepositoryType } from '../../interfaces/repositories.interfaces';
+import { DispatchRepositoryType, ICollaborator, IRepositoryOwner } from '../../interfaces/repositories.interfaces';
 import {
   getAllRepositories,
   handleError,
@@ -40,3 +41,8 @@ export const fetchCollaborators = (url: string) => async (dispatch: DispatchRepo
     );
   }
 };
+
+
+export function searchCollaborators(query:string, collaborator:IRepositoryOwner[]): IRepositoryOwner[]{
+  return collaborator.filter((collaborator:IRepositoryOwner)=> collaborator.login.toLocaleLowerCase().includes(query.toLocaleLowerCase()))
+}

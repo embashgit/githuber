@@ -2,8 +2,8 @@ import React from 'react'
 import { ISearchInput } from '../interfaces/components.interfaces'
 import Button from './Button'
 
-const SearchInput: React.FC<ISearchInput> = ({ value, setValue, handleSearch }) => (
-  <form onSubmit={(event: React.FormEvent<HTMLFormElement>)=>{event.preventDefault(); handleSearch()}} className="flex items-center justify-items-start relative  md:w-1/3 w-1/2">
+const SearchInput: React.FC<ISearchInput> = ({ value, setValue, handleSearch, placeholder="Search repositories",className='',showButton=true }) => (
+  <form onSubmit={(event: React.FormEvent<HTMLFormElement>)=>{event.preventDefault(); handleSearch()}} className={`flex items-center justify-items-start relative  md:w-1/3 w-1/2 ${className}`}>
     <div className="absolute flex items-center ml-2 h-full">
       <svg
         className="w-5 h-5 fill-current text-primary-gray-dark"
@@ -18,10 +18,10 @@ const SearchInput: React.FC<ISearchInput> = ({ value, setValue, handleSearch }) 
       type="text"
       value={value}
       onChange={(e) => setValue(e.target.value)}
-      placeholder="Search repositories"
-      className="px-8 py-3 w-full rounded-md transition focus:rounded-none mr-3 focus:text-3xl focus:outline-none bg-gray-100 border-transparent focus:border-b-2 focus:border-b-gray-900 focus:bg-white focus:ring-gray-900 text-base"
+      placeholder={placeholder}
+      className="px-8 py-3 w-full rounded-md transition focus:rounded-none mr-3 focus:text-2xl focus:outline-none bg-gray-100 border-transparent focus:border-b-2 focus:border-b-gray-900 focus:bg-white focus:ring-gray-900 text-base"
     />
-      <Button handleClick={handleSearch}>Search</Button>
+     {showButton && <Button handleClick={handleSearch}>Search</Button>}
   </form>
 )
 
