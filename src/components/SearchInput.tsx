@@ -7,7 +7,7 @@ const SearchInput: React.FC<ISearchInput> = ({
   setValue,
   handleSearch,
   placeholder = 'Search repositories',
-  className = '',
+  className,
   showButton = true,
 }) => (
   <form
@@ -15,7 +15,7 @@ const SearchInput: React.FC<ISearchInput> = ({
       event.preventDefault()
       handleSearch()
     }}
-    className={`flex items-center justify-items-start relative  md:w-1/3 w-1/2 ${className}`}
+    className={`flex items-center justify-items-start relative  ${className}`}
   >
     <div className="absolute flex items-center ml-2 h-full">
       <svg

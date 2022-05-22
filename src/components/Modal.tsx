@@ -57,7 +57,7 @@ const Modal: React.FC<IModal> = ({
                 </Dialog.Title>
                 <SearchInput
                   showButton={false}
-                  className="md:w-full mt-9"
+                  className="w-full mt-9"
                   placeholder="Search collaborator"
                   setValue={setValue}
                   value={value}
@@ -92,7 +92,7 @@ const Modal: React.FC<IModal> = ({
 
                 <div className="mt-4">
                   <Button
-                    className="inline-flex shadow justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                    className="inline-flex shadow justify-center rounded-md border border-transparent bg-gray-100 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2"
                     handleClick={onClose}
                   >
                     Got it, thanks!
