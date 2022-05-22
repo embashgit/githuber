@@ -1,5 +1,8 @@
 import { ReactChild, ReactElement, ReactNode } from 'react'
-import { RepositoriesState, RepositoriesAction } from './repositories.interfaces'
+import {
+  RepositoriesState,
+  RepositoriesAction,
+} from './repositories.interfaces'
 import { UserAction, UserState } from './user.interface'
 
 export interface StoreState {

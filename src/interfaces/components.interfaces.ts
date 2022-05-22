@@ -1,6 +1,6 @@
-import { string } from 'prop-types';
+import { string } from 'prop-types'
 import React from 'react'
-import { IRepositoryOwner } from './repositories.interfaces';
+import { IRepositoryOwner } from './repositories.interfaces'
 
 export interface Inav {
   name: string
@@ -22,9 +22,9 @@ export interface IfilterComponent {
 export interface ISearchInput {
   value: string
   setValue: (value: string) => void
-  showButton:boolean
-  className?:string  
-  placeholder?:string
+  showButton: boolean
+  className?: string
+  placeholder?: string
   handleSearch: (value?: string) => void
 }
 
@@ -60,7 +60,7 @@ export interface IModal {
   repositoryName: string
   isOpen: boolean
   setValue: (value: string) => void
-  value:string
+  value: string
   repositoryFullName: string
   collaborators: IRepositoryOwner[]
   loadingCollaborators: boolean

@@ -47,4 +47,6 @@ export type RepositoriesAction = {
   payload: any
 }
 
-export type DispatchRepositoryType = (args: RepositoriesAction) => RepositoriesAction
+export type DispatchRepositoryType = (
+  args: RepositoriesAction
+) => RepositoriesAction

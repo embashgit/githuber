@@ -1,8 +1,8 @@
 import {
   RepositoriesState,
   RepositoriesAction,
-} from '../../interfaces/repositories.interfaces';
-import { Constants } from '../actions/constants/Repositories.action';
+} from '../../interfaces/repositories.interfaces'
+import { Constants } from '../actions/constants/Repositories.action'
 
 const INITIAL_STATE: RepositoriesState = {
   repositories: [],
@@ -14,11 +14,11 @@ const INITIAL_STATE: RepositoriesState = {
   CollaboratorsErrorsMessage: '',
   collaborators: [],
   loadingCollaborators: false,
-};
+}
 
 const RepositoriesReducer = (
   state: RepositoriesState = INITIAL_STATE,
-  action: RepositoriesAction,
+  action: RepositoriesAction
 ): RepositoriesState => {
   switch (action.type) {
     case Constants.FETCH_REPOSITORIES:
@@ -27,13 +27,13 @@ const RepositoriesReducer = (
         repositories: action.payload,
         loadRequest: false,
         isError: false,
-      };
+      }
     case Constants.FETCHING_REPOSITORIES:
       return {
         ...state,
         loadRequest: true,
         isError: false,
-      };
+      }
     case Constants.FETCHING_FAILED:
       return {
         ...state,
@@ -41,19 +41,19 @@ const RepositoriesReducer = (
         isError: action.payload.isError,
         Errormessage: action.payload.Errormessage,
         repositories: [],
-      };
+      }
     case Constants.FETCH_COLLABORATORS:
       return {
         ...state,
         collaborators: action.payload,
         loadingCollaborators: false,
-      };
+      }
     case Constants.FETCHING_COLLABORATORS:
       return {
         ...state,
         loadingCollaborators: true,
         collaboratorsError: false,
-      };
+      }
     case Constants.FETCH_COLLABORATORS_FAILED:
       return {
         ...state,
@@ -61,10 +61,10 @@ const RepositoriesReducer = (
         collaboratorsError: action.payload.collaboratorsError,
         CollaboratorsErrorsMessage: action.payload.CollaboratorsErrorsMessage,
         collaborators: state.collaborators,
-      };
+      }
     default:
-      return state;
+      return state
   }
-};
+}
 
-export default RepositoriesReducer;
+export default RepositoriesReducer
