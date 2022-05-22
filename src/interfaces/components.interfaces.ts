@@ -21,9 +21,6 @@ export interface IfilterComponent {
 
 export interface ISearchInput {
   value: string
-  showButton?:Boolean;
-  className?: string;
-  placeholder?:string
   setValue: (value: string) => void
   handleSearch: (value?: string) => void
 }
