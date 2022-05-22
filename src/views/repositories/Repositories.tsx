@@ -5,6 +5,7 @@ import Button from '../../components/Button'
 import SearchInput from '../../components/SearchInput'
 import Table from '../../components/Table'
 import { fetchRepositories } from '../../redux/actions/helper'
+import { clearRecords } from '../../redux/actions/constants/Repositories.action'
 
 const Repositories = () => {
   const dispatch = useDispatch()
@@ -20,6 +21,7 @@ const Repositories = () => {
   const handleClear = () => {
     setValue('')
     setSelected('')
+    dispatch(clearRecords())
   }
 
   return (
@@ -30,6 +32,7 @@ const Repositories = () => {
         <div className="flex items-center justify-items-start mt-4">
           <SearchInput
             showButton={true}
+            className="md:w-full"
             handleSearch={handleSearch}
             value={value}
             setValue={setValue}

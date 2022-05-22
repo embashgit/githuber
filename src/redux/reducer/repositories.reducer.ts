@@ -63,7 +63,7 @@ const RepositoriesReducer = (
         collaborators: state.collaborators,
       }
     default:
-      return state
+      return state = INITIAL_STATE;
   }
 }
 

@@ -16,6 +16,7 @@ export const Constants = {
   FETCHING_COLLABORATORS: 'FETCHING_COLLABORATORS',
   FETCH_COLLABORATORS: 'FETCH_COLLABORATORS',
   FETCH_COLLABORATORS_FAILED: 'FETCH_COLLABORATORS_FAILED',
+  CLEAR_RECORDS:'CLEAR_RECORDS'
 }
 
 export function loadingRequest(): Action {
@@ -64,4 +65,8 @@ export function handleCollaboratorsError(
     type: Constants.FETCH_COLLABORATORS_FAILED,
     payload,
   }
+}
+
+export function clearRecords():RepositoriesAction{
+  return {type:Constants.CLEAR_RECORDS,payload:null}
 }
