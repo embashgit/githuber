@@ -13,8 +13,9 @@ const Repositories = () => {
     { label: 'alpha', value: 'alphacode' },
   ];
   const dispatch = useDispatch();
-  const [selected, setSelected] = useState('');
-  const [value, setValue] = useState('');
+  const [,setSelected] = useState<string>('');
+  const [value, setValue] = useState<string>('');
+
   const handleSearch = () => {
     const encodedStr = encodeURIComponent(value);
     dispatch(fetchRepositories(encodedStr));
