@@ -1,13 +1,18 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { IModal } from '../interfaces/components.interfaces';
 import Button from './Button';
 import { SkeletonCard } from './SkeletonCard';
+import SearchInput from './SearchInput';
+import { searchCollaborators } from '../redux/actions/helper';
 
 const Modal: React.FC<IModal> = ({
   repositoryName, isOpen, onClose,
   repositoryFullName, collaborators, loadingCollaborators
 }) => {
+
+  const [value, setValue] = useState('');
+  const handleSearch=()=>{}
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
@@ -44,9 +49,10 @@ const Modal: React.FC<IModal> = ({
                     <h1 className='mt-9'>List of Contributors</h1>
                     {/* <hr className='my-3' /> */}
                   </Dialog.Title>
+                  <SearchInput showButton={false} className="md:w-full mt-9" placeholder='Search collaborator' setValue={setValue} value={value} handleSearch={handleSearch} />
                   <div className='mt-2 overflow-auto' />
                   {loadingCollaborators &&  <SkeletonCard />}
-                  {!loadingCollaborators && collaborators.map((collaborator) => (
+                  {!loadingCollaborators && searchCollaborators(value, collaborators).map((collaborator) => (
                     <div key={collaborator.login} className="py-2 flex flex-row border-y border-gray-100 shadow rounded hover:bg-gray-300 my-3 p-2">
                       <img
                         className="h-8 w-8 rounded-full"

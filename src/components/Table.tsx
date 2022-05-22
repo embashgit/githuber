@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { StoreState } from '../interfaces/store.interfaces';
 import { IRepositories } from '../interfaces/repositories.interfaces';
-import { fetchCollaborators } from '../redux/actions/helper';
+import { fetchCollaborators, searchCollaborators } from '../redux/actions/helper';
 import TableHeader from './TableHeader';
 import TableRow from './TableRow';
 import Pagination from './Pagination';
