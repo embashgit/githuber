@@ -17,10 +17,10 @@ const Table = () => {
     loadRequest
   } = useSelector((state: StoreState) => state.Repositories);
   const dispatch = useDispatch();
-  const [currentPage, setCurrentPage] = useState(1);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [repoName, setRepoName] = useState('');
-  const [repoFullName, setRepoFullName] = useState('');
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [repoName, setRepoName] = useState<string>('');
+  const [repoFullName, setRepoFullName] = useState<string>('');
   const [listPerPage] = useState(10);
   const indexOfLastRepo = currentPage * listPerPage;
   const indexOfFirstRepo = indexOfLastRepo - listPerPage;

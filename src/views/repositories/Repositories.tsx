@@ -8,8 +8,8 @@ import { fetchRepositories } from '../../redux/actions/helper';
 
 const Repositories = () => {
   const dispatch = useDispatch();
-  const [,setSelected] = useState('');
-  const [value, setValue] = useState('');
+  const [,setSelected] = useState<string>('');
+  const [value, setValue] = useState<string>('');
   const handleSearch = () => {
     if(value){
       const encodedStr = encodeURIComponent(value);

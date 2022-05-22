@@ -13,8 +13,6 @@
 ## Getting Started
 - clone the repo using `git clone https://github.com/embashgit/githuber.git`
 - install the dependencies using `npm install`
-- Get Developer [Github token](https://github.com/settings/tokens) and update the .env file,
-- Check .env.example for guide.
 - start the development server using `npm run dev`
 - visit `http://localhost:5002` on your browser and you will be presented with the Main page
 ### Screen shots or Record(s)
@@ -38,6 +36,8 @@ The following are required to run the app
 ### Setup
 - clone the repo using `git clone https://github.com/embashgit/githuber.git`
 - install the dependencies using `npm install`
+- Get Developer [Github token](https://github.com/settings/tokens) and update the .env file,
+- Check .env.example for guide.
 - start the development server using `npm run dev`
 - visit `http://localhost:5002` on your browser and you will be presented with the Main page
 ​- run `npm run lint` to lint code
