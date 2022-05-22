@@ -1,10 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { StoreState } from '../../interfaces/store.interfaces';
 import Button from '../../components/Button';
 const LandingPage = () => {
-  const { user } = useSelector((state: StoreState) => state.User);
   return (
     <div  className="text-gray-900 box-content w-full text-center flex justify-center">
       <div className="hero-overlay bg-opacity-60"></div>
