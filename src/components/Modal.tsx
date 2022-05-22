@@ -8,11 +8,9 @@ import { searchCollaborators } from '../redux/actions/helper';
 
 const Modal: React.FC<IModal> = ({
   repositoryName, isOpen, onClose,
-  repositoryFullName, collaborators, loadingCollaborators
+  repositoryFullName, collaborators, loadingCollaborators,value,setValue
 }) => {
 
-  const [value, setValue] = useState('');
-  const handleSearch=()=>{}
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
@@ -49,7 +47,7 @@ const Modal: React.FC<IModal> = ({
                     <h1 className='mt-9'>List of Contributors</h1>
                     {/* <hr className='my-3' /> */}
                   </Dialog.Title>
-                  <SearchInput showButton={false} className="md:w-full mt-9" placeholder='Search collaborator' setValue={setValue} value={value} handleSearch={handleSearch} />
+                  <SearchInput showButton={false} className="md:w-full mt-9" placeholder='Search collaborator' setValue={setValue} value={value} handleSearch={()=>{}} />
                   <div className='mt-2 overflow-auto' />
                   {loadingCollaborators &&  <SkeletonCard />}
                   {!loadingCollaborators && searchCollaborators(value, collaborators).map((collaborator) => (

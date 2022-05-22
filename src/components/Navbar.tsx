@@ -4,7 +4,6 @@ import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import classNames from 'classnames'
 import { useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router'
-import Logo from '../../assets/logo-lg.svg'
 import { Inav } from '../interfaces/components.interfaces'
 
 export default () => {

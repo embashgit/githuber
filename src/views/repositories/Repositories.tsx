@@ -28,7 +28,7 @@ const Repositories = () => {
       <hr className='divider mx-auto w-1/2 my-9' />
       <div className=" mx-auto overflow-auto text-center place-item-center content-center justify-center align-center w-2/3 shadow p-5 rounded-lg bg-white">
         <div className="flex items-center justify-items-start mt-4">
-          <SearchInput handleSearch={handleSearch} value={value} setValue={setValue} />
+          <SearchInput showButton={true} handleSearch={handleSearch} value={value} setValue={setValue} />
           <Button className="ml-3" handleClick={handleClear}>
             <RefreshIcon className="h-6 w-6" />
           </Button>
