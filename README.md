@@ -18,7 +18,7 @@
 ### Screen shots or Record(s)
 
 <img width="1728" alt="Screenshot 2022-05-21 at 04 09 55" src="https://user-images.githubusercontent.com/29065413/169630428-a6890055-aecb-4e8f-a2f0-134016b3b1fb.png">
-
+<img width="1728" alt="Screenshot 2022-05-22 at 16 29 57" src="https://user-images.githubusercontent.com/29065413/169700419-0cfa3183-2865-4723-a4b6-6964b0ba2b3d.png">
 
 https://user-images.githubusercontent.com/29065413/169696021-b102aa67-1ad7-45f7-bce9-b709c72c802d.mov
 

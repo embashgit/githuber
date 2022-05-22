@@ -22,6 +22,9 @@ export interface IfilterComponent {
 export interface ISearchInput {
   value: string
   setValue: (value: string) => void
+  showButton:boolean
+  className?:string  
+  placeholder?:string
   handleSearch: (value?: string) => void
 }
 

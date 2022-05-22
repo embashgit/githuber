@@ -19,8 +19,9 @@ const Table = () => {
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [repoName, setRepoName] = useState<string>('');
   const [repoFullName, setRepoFullName] = useState<string>('');
+  const [value, setValue] = useState<string>('');
+  const [repoName, setRepoName] = useState<string>('');
   const [listPerPage] = useState(10);
   const indexOfLastRepo = currentPage * listPerPage;
   const indexOfFirstRepo = indexOfLastRepo - listPerPage;

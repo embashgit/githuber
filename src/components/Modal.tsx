@@ -1,16 +1,16 @@
-
-import React, { Fragment} from 'react';
+import React, { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { IModal } from '../interfaces/components.interfaces';
 import Button from './Button';
 import { SkeletonCard } from './SkeletonCard';
+import SearchInput from './SearchInput';
+import { searchCollaborators } from '../redux/actions/helper';
 
 const Modal: React.FC<IModal> = ({
   repositoryName, isOpen, onClose,
-  repositoryFullName, collaborators, loadingCollaborators,
-  setValue, value
+  repositoryFullName, collaborators, loadingCollaborators,value,setValue
 }) => {
-  const handleSearch=()=>{}
+
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
@@ -47,6 +47,7 @@ const Modal: React.FC<IModal> = ({
                     <h1 className='mt-9'>List of Contributors</h1>
                     {/* <hr className='my-3' /> */}
                   </Dialog.Title>
+                  <SearchInput showButton={false} className="md:w-full mt-9" placeholder='Search collaborator' setValue={setValue} value={value} handleSearch={()=>{}} />
                   <div className='mt-2 overflow-auto' />
                   {loadingCollaborators &&  <SkeletonCard />}
                   {!loadingCollaborators && searchCollaborators(value, collaborators).length > 0 ? searchCollaborators(value, collaborators).map((collaborator) => (
@@ -57,7 +58,7 @@ const Modal: React.FC<IModal> = ({
                         alt={collaborator.login}
                       /> <p className="font-bold self-center ml-2">{collaborator.login}</p>
                     </div>
-                  )) : <p className='text-lg text-gray-700'>No match found</p>}
+                  )) : <p className='text-lg text-gray-700 text-center p-3'>No match found</p>}
 
                   <div className="mt-4">
                     <Button
