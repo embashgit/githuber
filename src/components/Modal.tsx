@@ -50,7 +50,7 @@ const Modal: React.FC<IModal> = ({
                   <SearchInput showButton={false} className="md:w-full mt-9" placeholder='Search collaborator' setValue={setValue} value={value} handleSearch={()=>{}} />
                   <div className='mt-2 overflow-auto' />
                   {loadingCollaborators &&  <SkeletonCard />}
-                  {!loadingCollaborators && searchCollaborators(value, collaborators).map((collaborator) => (
+                  {!loadingCollaborators && searchCollaborators(value, collaborators).length > 0 ? searchCollaborators(value, collaborators).map((collaborator) => (
                     <div key={collaborator.login} className="py-2 flex flex-row border-y border-gray-100 shadow rounded hover:bg-gray-300 my-3 p-2">
                       <img
                         className="h-8 w-8 rounded-full"
@@ -58,7 +58,7 @@ const Modal: React.FC<IModal> = ({
                         alt={collaborator.login}
                       /> <p className="font-bold self-center ml-2">{collaborator.login}</p>
                     </div>
-                  ))}
+                  )) : <p className='text-lg text-gray-700 text-center p-3'>No match found</p>}
 
                   <div className="mt-4">
                     <Button
