@@ -44,7 +44,7 @@ const Modal: React.FC<IModal> = ({
                     className="text-2xl capitalize font-medium leading-6 text-gray-900"
                   >
                     {repositoryName} <small>({repositoryFullName})</small>
-                    <h1 className='mt-9'>List of Contributors</h1>
+                    <p className='mt-9'>List of Contributors</p>
                     {/* <hr className='my-3' /> */}
                   </Dialog.Title>
                   <SearchInput showButton={false} className="md:w-full mt-9" placeholder='Search collaborator' setValue={setValue} value={value} handleSearch={()=>{}} />
@@ -58,7 +58,7 @@ const Modal: React.FC<IModal> = ({
                         alt={collaborator.login}
                       /> <p className="font-bold self-center ml-2">{collaborator.login}</p>
                     </div>
-                  )) : <p className='text-lg text-gray-700 text-center p-3'>No match found</p>}
+                  )) : !loadingCollaborators && <p className='text-lg text-gray-700 text-center p-3'>No match found</p>}
 
                   <div className="mt-4">
                     <Button

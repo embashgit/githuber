@@ -29,7 +29,6 @@ export const fetchCollaborators = (url: string) => async (dispatch: DispatchRepo
   dispatch(loadingCollaborators());
   try {
     const { data } = await getCollaborators(url);
-    console.log(data);
     dispatch(getCollaboratorsAction(data));
   } catch (error) {
     dispatch(
