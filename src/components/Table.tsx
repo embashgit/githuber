@@ -21,6 +21,7 @@ const Table = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [repoName, setRepoName] = useState('');
   const [repoFullName, setRepoFullName] = useState('');
+  const [value, setValue] = useState('');
   const [listPerPage] = useState(10);
   const indexOfLastRepo = currentPage * listPerPage;
   const indexOfFirstRepo = indexOfLastRepo - listPerPage;
@@ -35,6 +36,7 @@ const Table = () => {
     setModalOpen(false);
     setRepoName('');
     setRepoFullName('');
+    setValue('') //to clear search in the modal
   };
 
   const openModal = (repo: IRepositories) => {
@@ -61,6 +63,8 @@ const Table = () => {
         repositoryName={repoName}
         isOpen={modalOpen}
         onClose={closeModal}
+        setValue={setValue}
+        value={value}
         repositoryFullName={repoFullName}
         collaborators={collaborators}
       />

@@ -59,6 +59,8 @@ export interface ICollaboratorsAlert {
 export interface IModal {
   repositoryName: string
   isOpen: boolean
+  setValue: (value: string) => void
+  value:string
   repositoryFullName: string
   collaborators: IRepositoryOwner[]
   loadingCollaborators: boolean
